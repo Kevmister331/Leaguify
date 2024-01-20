@@ -1,2 +1,5 @@
 flask
 spotipy
+jsonify
+config
+dotenv
