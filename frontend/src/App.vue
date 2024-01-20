@@ -1,0 +1,208 @@
+<script setup>
+import { ref } from 'vue';
+import Button from 'primevue/button';
+import Dropdown from 'primevue/dropdown';
+import teemoImage from '@/assets/teemo.jpg';
+
+
+const message = ref('');
+const selectedItem = ref(null); // Ref for the selected item
+const items = [{'name': 'Aatrox', 'value': 'aatrox'},
+ {'name': 'Ahri', 'value': 'ahri'},
+ {'name': 'Akali', 'value': 'akali'},
+ {'name': 'Akshan', 'value': 'akshan'},
+ {'name': 'Alistar', 'value': 'alistar'},
+ {'name': 'Amumu', 'value': 'amumu'},
+ {'name': 'Anivia', 'value': 'anivia'},
+ {'name': 'Annie', 'value': 'annie'},
+ {'name': 'Aphelios', 'value': 'aphelios'},
+ {'name': 'Ashe', 'value': 'ashe'},
+ {'name': 'Aurelion Sol', 'value': 'aurelion sol'},
+ {'name': 'Azir', 'value': 'azir'},
+ {'name': 'Bard', 'value': 'bard'},
+ {'name': "Bel'Veth", 'value': "bel'veth"},
+ {'name': 'Blitzcrank', 'value': 'blitzcrank'},
+ {'name': 'Brand', 'value': 'brand'},
+ {'name': 'Braum', 'value': 'braum'},
+ {'name': 'Briar', 'value': 'briar'},
+ {'name': 'Caitlyn', 'value': 'caitlyn'},
+ {'name': 'Camille', 'value': 'camille'},
+ {'name': 'Cassiopeia', 'value': 'cassiopeia'},
+ {'name': "Cho'Gath", 'value': "cho'gath"},
+ {'name': 'Corki', 'value': 'corki'},
+ {'name': 'Darius', 'value': 'darius'},
+ {'name': 'Diana', 'value': 'diana'},
+ {'name': 'Dr. Mundo', 'value': 'dr. mundo'},
+ {'name': 'Draven', 'value': 'draven'},
+ {'name': 'Ekko', 'value': 'ekko'},
+ {'name': 'Elise', 'value': 'elise'},
+ {'name': 'Evelynn', 'value': 'evelynn'},
+ {'name': 'Ezreal', 'value': 'ezreal'},
+ {'name': 'Fiddlesticks', 'value': 'fiddlesticks'},
+ {'name': 'Fiora', 'value': 'fiora'},
+ {'name': 'Fizz', 'value': 'fizz'},
+ {'name': 'Galio', 'value': 'galio'},
+ {'name': 'Gangplank', 'value': 'gangplank'},
+ {'name': 'Garen', 'value': 'garen'},
+ {'name': 'Gnar', 'value': 'gnar'},
+ {'name': 'Gragas', 'value': 'gragas'},
+ {'name': 'Graves', 'value': 'graves'},
+ {'name': 'Gwen', 'value': 'gwen'},
+ {'name': 'Hecarim', 'value': 'hecarim'},
+ {'name': 'Heimerdinger', 'value': 'heimerdinger'},
+ {'name': 'Hwei', 'value': 'hwei'},
+ {'name': 'Illaoi', 'value': 'illaoi'},
+ {'name': 'Irelia', 'value': 'irelia'},
+ {'name': 'Ivern', 'value': 'ivern'},
+ {'name': 'Janna', 'value': 'janna'},
+ {'name': 'Jarvan IV', 'value': 'jarvan iv'},
+ {'name': 'Jax', 'value': 'jax'},
+ {'name': 'Jayce', 'value': 'jayce'},
+ {'name': 'Jhin', 'value': 'jhin'},
+ {'name': 'Jinx', 'value': 'jinx'},
+ {'name': "K'Sante", 'value': "k'sante"},
+ {'name': "Kai'Sa", 'value': "kai'sa"},
+ {'name': 'Kalista', 'value': 'kalista'},
+ {'name': 'Karma', 'value': 'karma'},
+ {'name': 'Karthus', 'value': 'karthus'},
+ {'name': 'Kassadin', 'value': 'kassadin'},
+ {'name': 'Katarina', 'value': 'katarina'},
+ {'name': 'Kayle', 'value': 'kayle'},
+ {'name': 'Kayn', 'value': 'kayn'},
+ {'name': 'Kennen', 'value': 'kennen'},
+ {'name': "Kha'Zix", 'value': "kha'zix"},
+ {'name': 'Kindred', 'value': 'kindred'},
+ {'name': 'Kled', 'value': 'kled'},
+ {'name': "Kog'Maw", 'value': "kog'maw"},
+ {'name': 'LeBlanc', 'value': 'leblanc'},
+ {'name': 'Lee Sin', 'value': 'lee sin'},
+ {'name': 'Leona', 'value': 'leona'},
+ {'name': 'Lillia', 'value': 'lillia'},
+ {'name': 'Lissandra', 'value': 'lissandra'},
+ {'name': 'Lucian', 'value': 'lucian'},
+ {'name': 'Lulu', 'value': 'lulu'},
+ {'name': 'Lux', 'value': 'lux'},
+ {'name': 'Malphite', 'value': 'malphite'},
+ {'name': 'Malzahar', 'value': 'malzahar'},
+ {'name': 'Maokai', 'value': 'maokai'},
+ {'name': 'Master Yi', 'value': 'master yi'},
+ {'name': 'Milio', 'value': 'milio'},
+ {'name': 'Miss Fortune', 'value': 'miss fortune'},
+ {'name': 'Mordekaiser', 'value': 'mordekaiser'},
+ {'name': 'Morgana', 'value': 'morgana'},
+ {'name': 'Naafiri', 'value': 'naafiri'},
+ {'name': 'Nami', 'value': 'nami'},
+ {'name': 'Nasus', 'value': 'nasus'},
+ {'name': 'Nautilus', 'value': 'nautilus'},
+ {'name': 'Neeko', 'value': 'neeko'},
+ {'name': 'Nidalee', 'value': 'nidalee'},
+ {'name': 'Nilah', 'value': 'nilah'},
+ {'name': 'Nocturne', 'value': 'nocturne'},
+ {'name': 'Nunu & Willump', 'value': 'nunu & willump'},
+ {'name': 'Olaf', 'value': 'olaf'},
+ {'name': 'Orianna', 'value': 'orianna'},
+ {'name': 'Ornn', 'value': 'ornn'},
+ {'name': 'Pantheon', 'value': 'pantheon'},
+ {'name': 'Poppy', 'value': 'poppy'},
+ {'name': 'Pyke', 'value': 'pyke'},
+ {'name': 'Qiyana', 'value': 'qiyana'},
+ {'name': 'Quinn', 'value': 'quinn'},
+ {'name': 'Rakan', 'value': 'rakan'},
+ {'name': 'Rammus', 'value': 'rammus'},
+ {'name': "Rek'Sai", 'value': "rek'sai"},
+ {'name': 'Rell', 'value': 'rell'},
+ {'name': 'Renata Glasc', 'value': 'renata glasc'},
+ {'name': 'Renekton', 'value': 'renekton'},
+ {'name': 'Rengar', 'value': 'rengar'},
+ {'name': 'Riven', 'value': 'riven'},
+ {'name': 'Rumble', 'value': 'rumble'},
+ {'name': 'Ryze', 'value': 'ryze'},
+ {'name': 'Samira', 'value': 'samira'},
+ {'name': 'Sejuani', 'value': 'sejuani'},
+ {'name': 'Senna', 'value': 'senna'},
+ {'name': 'Seraphine', 'value': 'seraphine'},
+ {'name': 'Sett', 'value': 'sett'},
+ {'name': 'Shaco', 'value': 'shaco'},
+ {'name': 'Shen', 'value': 'shen'},
+ {'name': 'Shyvana', 'value': 'shyvana'},
+ {'name': 'Singed', 'value': 'singed'},
+ {'name': 'Sion', 'value': 'sion'},
+ {'name': 'Sivir', 'value': 'sivir'},
+ {'name': 'Skarner', 'value': 'skarner'},
+ {'name': 'Sona', 'value': 'sona'},
+ {'name': 'Soraka', 'value': 'soraka'},
+ {'name': 'Swain', 'value': 'swain'},
+ {'name': 'Sylas', 'value': 'sylas'},
+ {'name': 'Syndra', 'value': 'syndra'},
+ {'name': 'Tahm Kench', 'value': 'tahm kench'},
+ {'name': 'Taliyah', 'value': 'taliyah'},
+ {'name': 'Talon', 'value': 'talon'},
+ {'name': 'Taric', 'value': 'taric'},
+ {'name': 'Teemo', 'value': 'teemo', imageUrl: teemoImage},
+ {'name': 'Thresh', 'value': 'thresh'},
+ {'name': 'Tristana', 'value': 'tristana'},
+ {'name': 'Trundle', 'value': 'trundle'},
+ {'name': 'Tryndamere', 'value': 'tryndamere'},
+ {'name': 'Twisted Fate', 'value': 'twisted fate'},
+ {'name': 'Twitch', 'value': 'twitch'},
+ {'name': 'Udyr', 'value': 'udyr'},
+ {'name': 'Urgot', 'value': 'urgot'},
+ {'name': 'Varus', 'value': 'varus'},
+ {'name': 'Vayne', 'value': 'vayne'},
+ {'name': 'Veigar', 'value': 'veigar'},
+ {'name': "Vel'Koz", 'value': "vel'koz"},
+ {'name': 'Vex', 'value': 'vex'},
+ {'name': 'Vi', 'value': 'vi'},
+ {'name': 'Viego', 'value': 'viego'},
+ {'name': 'Viktor', 'value': 'viktor'},
+ {'name': 'Vladimir', 'value': 'vladimir'},
+ {'name': 'Volibear', 'value': 'volibear'},
+ {'name': 'Warwick', 'value': 'warwick'},
+ {'name': 'Wukong', 'value': 'wukong'},
+ {'name': 'Xayah', 'value': 'xayah'},
+ {'name': 'Xerath', 'value': 'xerath'},
+ {'name': 'Xin Zhao', 'value': 'xin zhao'},
+ {'name': 'Yasuo', 'value': 'yasuo'},
+ {'name': 'Yone', 'value': 'yone'},
+ {'name': 'Yorick', 'value': 'yorick'},
+ {'name': 'Yuumi', 'value': 'yuumi'},
+ {'name': 'Zac', 'value': 'zac'},
+ {'name': 'Zed', 'value': 'zed'},
+ {'name': 'Zeri', 'value': 'zeri'},
+ {'name': 'Ziggs', 'value': 'ziggs'},
+ {'name': 'Zilean', 'value': 'zilean'},
+ {'name': 'Zoe', 'value': 'zoe'},
+ {'name': 'Zyra', 'value': 'zyra'}];
+
+const showMessage = () => {
+    message.value = `Selected Champion: ${selectedItem.value.name}`;
+};
+</script>
+
+<template>
+  <div class="container">
+    <h2>Leaguify</h2>
+    <Dropdown :options="items" optionLabel="name" v-model="selectedItem" filter>
+      <template #item="slotProps">
+        <div class="dropdown-item">
+          <img v-if="slotProps.option.imageUrl" :src="slotProps.option.imageUrl" class="dropdown-image" />
+          <span>{{ slotProps.option.name }}</span>
+        </div>
+      </template>
+    </Dropdown>
+    <Button label="Confirm Selection" @click="showMessage"></Button>
+    <p v-if="message">{{ message }}</p>
+  </div>
+</template>
+
+<style scoped>
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 4rem;
+}
+
+
+</style>
