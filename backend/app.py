@@ -3,11 +3,22 @@ from spotify_client import get_spotify_client
 from spotify_service import SpotifyService
 from api_request_handler import APIRequestHandler
 import jsonify
+from flask_cors import CORS
+
+
 
 app = Flask(__name__)
+CORS(app, supports_credentials=True, origins='*')
+CORS(app)
 spotify_client = get_spotify_client()
 spotify_service = SpotifyService(spotify_client)
 api_request_handler = APIRequestHandler(spotify_service)
+
+@app.route('/headers')
+def headers():
+    response = make_response("Header data")
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    return response
 
 # Define your Flask routes here
 @app.route('/', methods=['GET'])
