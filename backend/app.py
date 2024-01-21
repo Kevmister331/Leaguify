@@ -1,11 +1,12 @@
 from flask import Flask
+from backend.openai_api import get_recommendations
 from spotify_client import get_spotify_client
 from spotify_service import SpotifyService
 from api_request_handler import APIRequestHandler
 import jsonify
 from flask_cors import CORS
-
-
+import json
+import ast
 
 app = Flask(__name__)
 CORS(app, supports_credentials=True, origins='*')
@@ -25,26 +26,50 @@ def headers():
 def ping():
     return "server up"
 
-@app.route('/getsong/<champion>')
-def getSong(champion):
-    data = generate('song', champion) 
+@app.route('/getsongs/<champion>')
+def getSongs(champion):
+    data = generate('songs', champion) 
     return jsonify(data)
 
 
-@app.route('/getplaylist/<champion>')
-def getPlaylist(champion):
-    data = generate('playlist', champion)
+@app.route('/getplaylists/<champion>')
+def getPlaylists(champion):
+    data = generate('playlists', champion)
     return jsonify(data)
 
-@app.route('/getartist/<champion>')
-def getArtist(champion):
-    data = generate('artist', champion)
+@app.route('/getartists/<champion>')
+def getArtists(champion):
+    data = generate('artists', champion)
     return jsonify(data)
 
 
-def generate(champion, typeContent):
-    #return api_request_handler.handle_request
-    return (champion + " " + typeContent)
+def generate(typeContent, champion):
+    # - Grab the champion's attributes 
+    # - Insert the correct attributes and content type that we want in the ChatGPT prompt
+    # - Send chatGPT the prompt, and on return, check if it is in the correct format: 
+    #   - An array of JSONs, each JSON represents a song
+    #   - [{artist: <artist name>, song: <song title>}, {etc.}]
+    # - After receiving the array of JSONs, check if it is in the valid format
+    #   - If it is in the correct format, use retrieve_song_data() to get all the songs
+    #       - If something goes wrong while fetching a song, exclude it from the final list and make a note of it
+    # - After getting the song info, return the data JSON
+    champions: json
+    with open("league_champs.json", "r") as read_file:
+        champions = json.load(read_file)
+    
+    traits = champions[champion]
+    recommendations = []
+    parsedRecs = ast.literal_eval(get_recommendations(traits))
+    # for rec in parsedRecs:
+    #     recommendation = json.loads(rec)
+    #     if not isinstance(recommendation, dict):
+    #         print(rec)
+    #         raise Exception("Exception encountered: ChatGPT didn't return a JSON, for some reason")
+    #     recommendations.append(recommendation)
+
+    res = spotify_service.retrieve_song_data(song_artist_pairs=parsedRecs)
+
+    return res
 
 
 
