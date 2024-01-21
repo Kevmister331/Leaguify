@@ -1,8 +1,11 @@
 from flask import Flask
+from backend.openai_api import get_recommendations
 from spotify_client import get_spotify_client
 from spotify_service import SpotifyService
 from api_request_handler import APIRequestHandler
 import jsonify
+import json
+import ast
 
 app = Flask(__name__)
 spotify_client = get_spotify_client()
@@ -41,9 +44,23 @@ def generate(typeContent, champion):
     #   - If it is in the correct format, use retrieve_song_data() to get all the songs
     #       - If something goes wrong while fetching a song, exclude it from the final list and make a note of it
     # - After getting the song info, return the data JSON
+    champions: json
+    with open("league_champs.json", "r") as read_file:
+        champions = json.load(read_file)
     
-    #return api_request_handler.handle_request
-    return (champion + " " + typeContent)
+    traits = champions[champion]
+    recommendations = []
+    parsedRecs = ast.literal_eval(get_recommendations(traits))
+    # for rec in parsedRecs:
+    #     recommendation = json.loads(rec)
+    #     if not isinstance(recommendation, dict):
+    #         print(rec)
+    #         raise Exception("Exception encountered: ChatGPT didn't return a JSON, for some reason")
+    #     recommendations.append(recommendation)
+
+    res = spotify_service.retrieve_song_data(song_artist_pairs=parsedRecs)
+
+    return res
 
 
 

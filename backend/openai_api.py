@@ -1,18 +1,27 @@
 from openai import OpenAI
+import dotenv
+import os
+
+dotenv.load_dotenv()
 
 client = OpenAI(
-    api_key = "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"
+    api_key = os.environ.get('API_KEY')
 )
 
-prompt = "Whats the biggest country in the world?"
-chat_completion = client.chat.completions.create(
-    messages=[
-        {
-            "role":"user",
-            "content":prompt
-        }
-    ],
-    model="gpt-3.5-turbo"
-)
+def get_recommendations(traits):
+    prompt1 = "Generate 10 different, popular songs that actually exist, based on these traits:"
+    prompt2 = ". Please choose more popular songs for the first 5, and choose less popular (more indie or niche) songs for the last 5. Return the result as an array of json objects, with each object representing a song in the following format: {artist: <artist name>, song: <song title>}"
+    for trait in traits:
+        prompt1 = prompt1 + " " + trait
+    chat_completion = client.chat.completions.create(
+        messages=[
+            {
+                "role":"user",
+                "content":prompt1 + prompt2
+            }
+        ],
+        model="gpt-3.5-turbo"
+    )
 
-print(chat_completion.choices[0].message.content)
+    print(chat_completion.choices[0].message.content)
+    return chat_completion.choices[0].message.content
