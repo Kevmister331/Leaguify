@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, make_response
 from backend.openai_api import get_recommendations
 from spotify_client import get_spotify_client
 from spotify_service import SpotifyService

@@ -1,18 +1,53 @@
-h2 {
-  color: #11b981;
-  margin: 50px;
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Spotify Color Palette */
+:root {
+  --spotify-black: #191414;
+  --spotify-green: #1DB954;
+  --spotify-white: #FFFFFF;
+  --spotify-grey: #b3b3b3;
 }
+
+h2 {
+  color: var(--spotify-green);
+  font-size: 3rem; /* Increase font size */
+  font-family: 'Roboto', sans-serif; /* Use Roboto font */
+  font-weight: 700; /* Make it bold */
+  margin-top: 0;
+}
+
 .background {
-  background-image: linear-gradient(#212121, #101010);
-  min-width: 100vw;
-  min-height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  background: var(--spotify-black);
+  color: var(--spotify-white);
+  overflow-x: hidden;
 }
-.button {
+
+.button, .next-step {
+  background-color: var(--spotify-green);
+  border: none;
+  color: var(--spotify-white);
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
   margin: 20px;
+  font-family: 'Roboto', sans-serif; /* Spotify-like font */
+  font-size: 1rem;
+  text-transform: uppercase; /* Optional: Makes text uppercase */
+  letter-spacing: 1px; /* Optional: Increases letter spacing for a modern look */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
 }
+
+.button:hover, .next-step:hover {
+  background-color: #1ed760; /* Slightly lighter green on hover */
+  color: var(--spotify-black); /* Change text color to ensure visibility */
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -23,13 +58,13 @@ h2 {
 }
 
 .song-list-container {
-  background-color: #6a0dad; /* Purple background */
-  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: var(--spotify-white);
   padding: 20px;
   padding-left: 50px;
   border-radius: 10px;
-  max-width: 60vw; /* Set max width */
-  margin: auto; /* Center the container */
+  max-width: 60vw;
+  margin: auto;
 }
 
 .song-list {
@@ -48,21 +83,39 @@ h2 {
   margin-right: 10px;
 }
 
-.next-step {
-  background-color: #9b59b6; /* Lighter purple */
-  border: none;
-  color: white;
+.song-title, .song-artist {
+  color: var(--spotify-white);
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+.song-title:hover, .song-artist:hover {
+  color: var(--spotify-green);
+}
+
+.logo {
+  max-width: 200px; /* Adjust the size as necessary */
+  margin-top: -2rem;
+}
+
+.dropdown-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between the dropdown groups */
+}
+
+.dropdown-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+select {
+  width: 200px; /* Fixed width for dropdowns */
   padding: 10px 20px;
   border-radius: 20px;
+  font-family: 'Roboto', sans-serif;
   cursor: pointer;
-}
-
-.song-title {
-  margin-right: 5px;
-  color: inherit; /* The link will use the color inherited from the parent element */
-  text-decoration: none; /* Removes the underline from links */
-}
-
-.song-title:hover {
-  text-decoration: none; /* Ensures the underline does not appear on hover */
+  outline: none;
+  margin-top: 10px; /* Space between title and dropdown */
 }

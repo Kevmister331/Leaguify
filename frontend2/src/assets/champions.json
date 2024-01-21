@@ -1,667 +1,168 @@
 [
-    {
-       "name":"Aatrox",
-       "value":"aatrox"
-    },
-    {
-       "name":"Ahri",
-       "value":"ahri"
-    },
-    {
-       "name":"Akali",
-       "value":"akali"
-    },
-    {
-       "name":"Akshan",
-       "value":"akshan"
-    },
-    {
-       "name":"Alistar",
-       "value":"alistar"
-    },
-    {
-       "name":"Amumu",
-       "value":"amumu"
-    },
-    {
-       "name":"Anivia",
-       "value":"anivia"
-    },
-    {
-       "name":"Annie",
-       "value":"annie"
-    },
-    {
-       "name":"Aphelios",
-       "value":"aphelios"
-    },
-    {
-       "name":"Ashe",
-       "value":"ashe"
-    },
-    {
-       "name":"Aurelion Sol",
-       "value":"aurelion sol"
-    },
-    {
-       "name":"Azir",
-       "value":"azir"
-    },
-    {
-       "name":"Bard",
-       "value":"bard"
-    },
-    {
-       "name":"Bel'Veth",
-       "value":"bel'veth"
-    },
-    {
-       "name":"Blitzcrank",
-       "value":"blitzcrank"
-    },
-    {
-       "name":"Brand",
-       "value":"brand"
-    },
-    {
-       "name":"Braum",
-       "value":"braum"
-    },
-    {
-       "name":"Briar",
-       "value":"briar"
-    },
-    {
-       "name":"Caitlyn",
-       "value":"caitlyn"
-    },
-    {
-       "name":"Camille",
-       "value":"camille"
-    },
-    {
-       "name":"Cassiopeia",
-       "value":"cassiopeia"
-    },
-    {
-       "name":"Cho'Gath",
-       "value":"cho'gath"
-    },
-    {
-       "name":"Corki",
-       "value":"corki"
-    },
-    {
-       "name":"Darius",
-       "value":"darius"
-    },
-    {
-       "name":"Diana",
-       "value":"diana"
-    },
-    {
-       "name":"Dr. Mundo",
-       "value":"dr. mundo"
-    },
-    {
-       "name":"Draven",
-       "value":"draven"
-    },
-    {
-       "name":"Ekko",
-       "value":"ekko"
-    },
-    {
-       "name":"Elise",
-       "value":"elise"
-    },
-    {
-       "name":"Evelynn",
-       "value":"evelynn"
-    },
-    {
-       "name":"Ezreal",
-       "value":"ezreal"
-    },
-    {
-       "name":"Fiddlesticks",
-       "value":"fiddlesticks"
-    },
-    {
-       "name":"Fiora",
-       "value":"fiora"
-    },
-    {
-       "name":"Fizz",
-       "value":"fizz"
-    },
-    {
-       "name":"Galio",
-       "value":"galio"
-    },
-    {
-       "name":"Gangplank",
-       "value":"gangplank"
-    },
-    {
-       "name":"Garen",
-       "value":"garen"
-    },
-    {
-       "name":"Gnar",
-       "value":"gnar"
-    },
-    {
-       "name":"Gragas",
-       "value":"gragas"
-    },
-    {
-       "name":"Graves",
-       "value":"graves"
-    },
-    {
-       "name":"Gwen",
-       "value":"gwen"
-    },
-    {
-       "name":"Hecarim",
-       "value":"hecarim"
-    },
-    {
-       "name":"Heimerdinger",
-       "value":"heimerdinger"
-    },
-    {
-       "name":"Hwei",
-       "value":"hwei"
-    },
-    {
-       "name":"Illaoi",
-       "value":"illaoi"
-    },
-    {
-       "name":"Irelia",
-       "value":"irelia"
-    },
-    {
-       "name":"Ivern",
-       "value":"ivern"
-    },
-    {
-       "name":"Janna",
-       "value":"janna"
-    },
-    {
-       "name":"Jarvan IV",
-       "value":"jarvan iv"
-    },
-    {
-       "name":"Jax",
-       "value":"jax"
-    },
-    {
-       "name":"Jayce",
-       "value":"jayce"
-    },
-    {
-       "name":"Jhin",
-       "value":"jhin"
-    },
-    {
-       "name":"Jinx",
-       "value":"jinx"
-    },
-    {
-       "name":"K'Sante",
-       "value":"k'sante"
-    },
-    {
-       "name":"Kai'Sa",
-       "value":"kai'sa"
-    },
-    {
-       "name":"Kalista",
-       "value":"kalista"
-    },
-    {
-       "name":"Karma",
-       "value":"karma"
-    },
-    {
-       "name":"Karthus",
-       "value":"karthus"
-    },
-    {
-       "name":"Kassadin",
-       "value":"kassadin"
-    },
-    {
-       "name":"Katarina",
-       "value":"katarina"
-    },
-    {
-       "name":"Kayle",
-       "value":"kayle"
-    },
-    {
-       "name":"Kayn",
-       "value":"kayn"
-    },
-    {
-       "name":"Kennen",
-       "value":"kennen"
-    },
-    {
-       "name":"Kha'Zix",
-       "value":"kha'zix"
-    },
-    {
-       "name":"Kindred",
-       "value":"kindred"
-    },
-    {
-       "name":"Kled",
-       "value":"kled"
-    },
-    {
-       "name":"Kog'Maw",
-       "value":"kog'maw"
-    },
-    {
-       "name":"LeBlanc",
-       "value":"leblanc"
-    },
-    {
-       "name":"Lee Sin",
-       "value":"lee sin"
-    },
-    {
-       "name":"Leona",
-       "value":"leona"
-    },
-    {
-       "name":"Lillia",
-       "value":"lillia"
-    },
-    {
-       "name":"Lissandra",
-       "value":"lissandra"
-    },
-    {
-       "name":"Lucian",
-       "value":"lucian"
-    },
-    {
-       "name":"Lulu",
-       "value":"lulu"
-    },
-    {
-       "name":"Lux",
-       "value":"lux"
-    },
-    {
-       "name":"Malphite",
-       "value":"malphite"
-    },
-    {
-       "name":"Malzahar",
-       "value":"malzahar"
-    },
-    {
-       "name":"Maokai",
-       "value":"maokai"
-    },
-    {
-       "name":"Master Yi",
-       "value":"master yi"
-    },
-    {
-       "name":"Milio",
-       "value":"milio"
-    },
-    {
-       "name":"Miss Fortune",
-       "value":"miss fortune"
-    },
-    {
-       "name":"Mordekaiser",
-       "value":"mordekaiser"
-    },
-    {
-       "name":"Morgana",
-       "value":"morgana"
-    },
-    {
-       "name":"Naafiri",
-       "value":"naafiri"
-    },
-    {
-       "name":"Nami",
-       "value":"nami"
-    },
-    {
-       "name":"Nasus",
-       "value":"nasus"
-    },
-    {
-       "name":"Nautilus",
-       "value":"nautilus"
-    },
-    {
-       "name":"Neeko",
-       "value":"neeko"
-    },
-    {
-       "name":"Nidalee",
-       "value":"nidalee"
-    },
-    {
-       "name":"Nilah",
-       "value":"nilah"
-    },
-    {
-       "name":"Nocturne",
-       "value":"nocturne"
-    },
-    {
-       "name":"Nunu & Willump",
-       "value":"nunu & willump"
-    },
-    {
-       "name":"Olaf",
-       "value":"olaf"
-    },
-    {
-       "name":"Orianna",
-       "value":"orianna"
-    },
-    {
-       "name":"Ornn",
-       "value":"ornn"
-    },
-    {
-       "name":"Pantheon",
-       "value":"pantheon"
-    },
-    {
-       "name":"Poppy",
-       "value":"poppy"
-    },
-    {
-       "name":"Pyke",
-       "value":"pyke"
-    },
-    {
-       "name":"Qiyana",
-       "value":"qiyana"
-    },
-    {
-       "name":"Quinn",
-       "value":"quinn"
-    },
-    {
-       "name":"Rakan",
-       "value":"rakan"
-    },
-    {
-       "name":"Rammus",
-       "value":"rammus"
-    },
-    {
-       "name":"Rek'Sai",
-       "value":"rek'sai"
-    },
-    {
-       "name":"Rell",
-       "value":"rell"
-    },
-    {
-       "name":"Renata Glasc",
-       "value":"renata glasc"
-    },
-    {
-       "name":"Renekton",
-       "value":"renekton"
-    },
-    {
-       "name":"Rengar",
-       "value":"rengar"
-    },
-    {
-       "name":"Riven",
-       "value":"riven"
-    },
-    {
-       "name":"Rumble",
-       "value":"rumble"
-    },
-    {
-       "name":"Ryze",
-       "value":"ryze"
-    },
-    {
-       "name":"Samira",
-       "value":"samira"
-    },
-    {
-       "name":"Sejuani",
-       "value":"sejuani"
-    },
-    {
-       "name":"Senna",
-       "value":"senna"
-    },
-    {
-       "name":"Seraphine",
-       "value":"seraphine"
-    },
-    {
-       "name":"Sett",
-       "value":"sett"
-    },
-    {
-       "name":"Shaco",
-       "value":"shaco"
-    },
-    {
-       "name":"Shen",
-       "value":"shen"
-    },
-    {
-       "name":"Shyvana",
-       "value":"shyvana"
-    },
-    {
-       "name":"Singed",
-       "value":"singed"
-    },
-    {
-       "name":"Sion",
-       "value":"sion"
-    },
-    {
-       "name":"Sivir",
-       "value":"sivir"
-    },
-    {
-       "name":"Skarner",
-       "value":"skarner"
-    },
-    {
-       "name":"Sona",
-       "value":"sona"
-    },
-    {
-       "name":"Soraka",
-       "value":"soraka"
-    },
-    {
-       "name":"Swain",
-       "value":"swain"
-    },
-    {
-       "name":"Sylas",
-       "value":"sylas"
-    },
-    {
-       "name":"Syndra",
-       "value":"syndra"
-    },
-    {
-       "name":"Tahm Kench",
-       "value":"tahm kench"
-    },
-    {
-       "name":"Taliyah",
-       "value":"taliyah"
-    },
-    {
-       "name":"Talon",
-       "value":"talon"
-    },
-    {
-       "name":"Taric",
-       "value":"taric"
-    },
-    {
-       "name":"Teemo",
-       "value":"teemo",
-       "imageUrl":"teemoImage"
-    },
-    {
-       "name":"Thresh",
-       "value":"thresh"
-    },
-    {
-       "name":"Tristana",
-       "value":"tristana"
-    },
-    {
-       "name":"Trundle",
-       "value":"trundle"
-    },
-    {
-       "name":"Tryndamere",
-       "value":"tryndamere"
-    },
-    {
-       "name":"Twisted Fate",
-       "value":"twisted fate"
-    },
-    {
-       "name":"Twitch",
-       "value":"twitch"
-    },
-    {
-       "name":"Udyr",
-       "value":"udyr"
-    },
-    {
-       "name":"Urgot",
-       "value":"urgot"
-    },
-    {
-       "name":"Varus",
-       "value":"varus"
-    },
-    {
-       "name":"Vayne",
-       "value":"vayne"
-    },
-    {
-       "name":"Veigar",
-       "value":"veigar"
-    },
-    {
-       "name":"Vel'Koz",
-       "value":"vel'koz"
-    },
-    {
-       "name":"Vex",
-       "value":"vex"
-    },
-    {
-       "name":"Vi",
-       "value":"vi"
-    },
-    {
-       "name":"Viego",
-       "value":"viego"
-    },
-    {
-       "name":"Viktor",
-       "value":"viktor"
-    },
-    {
-       "name":"Vladimir",
-       "value":"vladimir"
-    },
-    {
-       "name":"Volibear",
-       "value":"volibear"
-    },
-    {
-       "name":"Warwick",
-       "value":"warwick"
-    },
-    {
-       "name":"Wukong",
-       "value":"wukong"
-    },
-    {
-       "name":"Xayah",
-       "value":"xayah"
-    },
-    {
-       "name":"Xerath",
-       "value":"xerath"
-    },
-    {
-       "name":"Xin Zhao",
-       "value":"xin zhao"
-    },
-    {
-       "name":"Yasuo",
-       "value":"yasuo"
-    },
-    {
-       "name":"Yone",
-       "value":"yone"
-    },
-    {
-       "name":"Yorick",
-       "value":"yorick"
-    },
-    {
-       "name":"Yuumi",
-       "value":"yuumi"
-    },
-    {
-       "name":"Zac",
-       "value":"zac"
-    },
-    {
-       "name":"Zed",
-       "value":"zed"
-    },
-    {
-       "name":"Zeri",
-       "value":"zeri"
-    },
-    {
-       "name":"Ziggs",
-       "value":"ziggs"
-    },
-    {
-       "name":"Zilean",
-       "value":"zilean"
-    },
-    {
-       "name":"Zoe",
-       "value":"zoe"
-    },
-    {
-       "name":"Zyra",
-       "value":"zyra"
-    }
+   {"name":"Aatrox", "value":"Aatrox"},
+    {"name":"Ahri", "value":"Ahri"},
+    {"name":"Akali", "value":"Akali"},
+    {"name":"Akshan", "value":"Akshan"},
+    {"name":"Alistar", "value":"Alistar"},
+    {"name":"Amumu", "value":"Amumu"},
+    {"name":"Anivia", "value":"Anivia"},
+    {"name":"Annie", "value":"Annie"},
+    {"name":"Aphelios", "value":"Aphelios"},
+    {"name":"Ashe", "value":"Ashe"},
+    {"name":"Aurelion Sol", "value":"Aurelion Sol"},
+    {"name":"Azir", "value":"Azir"},
+    {"name":"Bard", "value":"Bard"},
+    {"name":"Bel'Veth", "value":"Bel'Veth"},
+    {"name":"Blitzcrank", "value":"Blitzcrank"},
+    {"name":"Brand", "value":"Brand"},
+    {"name":"Braum", "value":"Braum"},
+    {"name":"Briar", "value":"Briar"},
+    {"name":"Caitlyn", "value":"Caitlyn"},
+    {"name":"Camille", "value":"Camille"},
+    {"name":"Cassiopeia", "value":"Cassiopeia"},
+    {"name":"Cho'Gath", "value":"Cho'Gath"},
+    {"name":"Corki", "value":"Corki"},
+    {"name":"Darius", "value":"Darius"},
+    {"name":"Diana", "value":"Diana"},
+    {"name":"Dr. Mundo", "value":"Dr. Mundo"},
+    {"name":"Draven", "value":"Draven"},
+    {"name":"Ekko", "value":"Ekko"},
+    {"name":"Elise", "value":"Elise"},
+    {"name":"Evelynn", "value":"Evelynn"},
+    {"name":"Ezreal", "value":"Ezreal"},
+    {"name":"Fiddlesticks", "value":"Fiddlesticks"},
+    {"name":"Fiora", "value":"Fiora"},
+    {"name":"Fizz", "value":"Fizz"},
+    {"name":"Galio", "value":"Galio"},
+    {"name":"Gangplank", "value":"Gangplank"},
+    {"name":"Garen", "value":"Garen"},
+    {"name":"Gnar", "value":"Gnar"},
+    {"name":"Gragas", "value":"Gragas"},
+    {"name":"Graves", "value":"Graves"},
+    {"name":"Gwen", "value":"Gwen"},
+    {"name":"Hecarim", "value":"Hecarim"},
+    {"name":"Heimerdinger", "value":"Heimerdinger"},
+    {"name":"Hwei", "value":"Hwei"},
+    {"name":"Illaoi", "value":"Illaoi"},
+    {"name":"Irelia", "value":"Irelia"},
+    {"name":"Ivern", "value":"Ivern"},
+    {"name":"Janna", "value":"Janna"},
+    {"name":"Jarvan IV", "value":"Jarvan IV"},
+    {"name":"Jax", "value":"Jax"},
+    {"name":"Jayce", "value":"Jayce"},
+    {"name":"Jhin", "value":"Jhin"},
+    {"name":"Jinx", "value":"Jinx"},
+    {"name":"K'Sante", "value":"K'Sante"},
+    {"name":"Kai'Sa", "value":"Kai'Sa"},
+    {"name":"Kalista", "value":"Kalista"},
+    {"name":"Karma", "value":"Karma"},
+    {"name":"Karthus", "value":"Karthus"},
+    {"name":"Kassadin", "value":"Kassadin"},
+    {"name":"Katarina", "value":"Katarina"},
+    {"name":"Kayle", "value":"Kayle"},
+    {"name":"Kayn", "value":"Kayn"},
+    {"name":"Kennen", "value":"Kennen"},
+    {"name":"Kha'Zix", "value":"Kha'Zix"},
+    {"name":"Kindred", "value":"Kindred"},
+    {"name":"Kled", "value":"Kled"},
+    {"name":"Kog'Maw", "value":"Kog'Maw"},
+    {"name":"LeBlanc", "value":"LeBlanc"},
+    {"name":"Lee Sin", "value":"Lee Sin"},
+    {"name":"Leona", "value":"Leona"},
+    {"name":"Lillia", "value":"Lillia"},
+    {"name":"Lissandra", "value":"Lissandra"},
+    {"name":"Lucian", "value":"Lucian"},
+    {"name":"Lulu", "value":"Lulu"},
+    {"name":"Lux", "value":"Lux"},
+    {"name":"Malphite", "value":"Malphite"},
+    {"name":"Malzahar", "value":"Malzahar"},
+    {"name":"Maokai", "value":"Maokai"},
+    {"name":"Master Yi", "value":"Master Yi"},
+    {"name":"Milio", "value":"Milio"},
+    {"name":"Miss Fortune", "value":"Miss Fortune"},
+    {"name":"Mordekaiser", "value":"Mordekaiser"},
+    {"name":"Morgana", "value":"Morgana"},
+    {"name":"Naafiri", "value":"Naafiri"},
+    {"name":"Nami", "value":"Nami"},
+    {"name":"Nasus", "value":"Nasus"},
+    {"name":"Nautilus", "value":"Nautilus"},
+    {"name":"Neeko", "value":"Neeko"},
+    {"name":"Nidalee", "value":"Nidalee"},
+    {"name":"Nilah", "value":"Nilah"},
+    {"name":"Nocturne", "value":"Nocturne"},
+    {"name":"Nunu & Willump", "value":"Nunu & Willump"},
+    {"name":"Olaf", "value":"Olaf"},
+    {"name":"Orianna", "value":"Orianna"},
+    {"name":"Ornn", "value":"Ornn"},
+    {"name":"Pantheon", "value":"Pantheon"},
+    {"name":"Poppy", "value":"Poppy"},
+    {"name":"Pyke", "value":"Pyke"},
+    {"name":"Qiyana", "value":"Qiyana"},
+    {"name":"Quinn", "value":"Quinn"},
+    {"name":"Rakan", "value":"Rakan"},
+    {"name":"Rammus", "value":"Rammus"},
+    {"name":"Rek'Sai", "value":"Rek'Sai"},
+    {"name":"Rell", "value":"Rell"},
+    {"name":"Renata Glasc", "value":"Renata Glasc"},
+    {"name":"Renekton", "value":"Renekton"},
+    {"name":"Rengar", "value":"Rengar"},
+    {"name":"Riven", "value":"Riven"},
+    {"name":"Rumble", "value":"Rumble"},
+    {"name":"Ryze", "value":"Ryze"},
+    {"name":"Samira", "value":"Samira"},
+    {"name":"Sejuani", "value":"Sejuani"},
+    {"name":"Senna", "value":"Senna"},
+    {"name":"Seraphine", "value":"Seraphine"},
+    {"name":"Sett", "value":"Sett"},
+    {"name":"Shaco", "value":"Shaco"},
+    {"name":"Shen", "value":"Shen"},
+    {"name":"Shyvana", "value":"Shyvana"},
+    {"name":"Singed", "value":"Singed"},
+    {"name":"Sion", "value":"Sion"},
+    {"name":"Sivir", "value":"Sivir"},
+    {"name":"Skarner", "value":"Skarner"},
+    {"name":"Sona", "value":"Sona"},
+    {"name":"Soraka", "value":"Soraka"},
+    {"name":"Swain", "value":"Swain"},
+    {"name":"Sylas", "value":"Sylas"},
+    {"name":"Syndra", "value":"Syndra"},
+    {"name":"Tahm Kench", "value":"Tahm Kench"},
+    {"name":"Taliyah", "value":"Taliyah"},
+    {"name":"Talon", "value":"Talon"},
+    {"name":"Taric", "value":"Taric"},
+    {"name":"Teemo", "value":"Teemo"},
+    {"name":"Thresh", "value":"Thresh"},
+    {"name":"Tristana", "value":"Tristana"},
+    {"name":"Trundle", "value":"Trundle"},
+    {"name":"Tryndamere", "value":"Tryndamere"},
+    {"name":"Twisted Fate", "value":"Twisted Fate"},
+    {"name":"Twitch", "value":"Twitch"},
+    {"name":"Udyr", "value":"Udyr"},
+    {"name":"Urgot", "value":"Urgot"},
+    {"name":"Varus", "value":"Varus"},
+    {"name":"Vayne", "value":"Vayne"},
+    {"name":"Veigar", "value":"Veigar"},
+    {"name":"Vel'Koz", "value":"Vel'Koz"},
+    {"name":"Vex", "value":"Vex"},
+    {"name":"Vi", "value":"Vi"},
+    {"name":"Viego", "value":"Viego"},
+    {"name":"Viktor", "value":"Viktor"},
+    {"name":"Vladimir", "value":"Vladimir"},
+    {"name":"Volibear", "value":"Volibear"},
+    {"name":"Warwick", "value":"Warwick"},
+    {"name":"Wukong", "value":"Wukong"},
+    {"name":"Xayah", "value":"Xayah"},
+    {"name":"Xerath", "value":"Xerath"},
+    {"name":"Xin Zhao", "value":"Xin Zhao"},
+    {"name":"Yasuo", "value":"Yasuo"},
+    {"name":"Yone", "value":"Yone"},
+    {"name":"Yorick", "value":"Yorick"},
+    {"name":"Yuumi", "value":"Yuumi"},
+    {"name":"Zac", "value":"Zac"},
+    {"name":"Zed", "value":"Zed"},
+    {"name":"Zeri", "value":"Zeri"},
+    {"name":"Ziggs", "value":"Ziggs"},
+    {"name":"Zilean", "value":"Zilean"},
+    {"name":"Zoe", "value":"Zoe"},
+    {"name":"Zyra", "value":"Zyra"}
  ]

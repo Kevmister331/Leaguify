@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import items from "./assets/champions.json" // Adjust the import path as needed
 import "./App.css"
+import logo from './assets/leaguifylogo.png';
 
 const BACKEND_URL = "http://localhost:5000"
 
@@ -72,25 +73,29 @@ const App = () => {
   return (
     <div className="background">
       <div className="container">
+        <img src={logo} alt="Leaguify Logo" className="logo" />
         <h2>Leaguify</h2>
-        <div>
-          <select value={selectedItem} onChange={handleDropdownChange}>
-            {items.map((item) => (
-              <option key={item.name} value={item.name}>
-                {item.name}
-              </option>
-            ))}
-          </select>
+        <div className="dropdown-container">
+          <div className="dropdown-group">
+            <h3>Select Champion</h3>
+            <select value={selectedItem} onChange={handleDropdownChange}>
+              {items.map((item) => (
+                <option key={item.name} value={item.name}>
+                  {item.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="dropdown-group">
+            <h3>Select output type</h3>
+            <select value={selectedType} onChange={handleTypeChange}>
+              <option value="Songs">Songs</option>
+              <option value="Albums">Albums</option>
+              <option value="Artists">Artists</option>
+            </select>
+          </div>
         </div>
-        <h3>Select output type</h3>
-        <div>
-          <select value={selectedType} onChange={handleTypeChange}>
-            <option value="Songs">Songs</option>
-            <option value="Albums">Albums</option>
-            <option value="Artists">Artists</option>
-          </select>
-        </div>
-        <button label="Confirm Selection" onClick={submitOptions}>
+        <button className="button" onClick={submitOptions}>
           Generate
         </button>
         <p>{selectedType}</p>
