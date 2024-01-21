@@ -30,7 +30,8 @@ def ping():
 def getSongs(champion):
     print("In getSongs: " + champion)
     result = generate('songs', champion)
-    return {'songs': result}
+    print(result)
+    return result
 
 
 @app.route('/getplaylists/<champion>')
