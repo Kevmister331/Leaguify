@@ -1,0 +1,68 @@
+h2 {
+  color: #11b981;
+  margin: 50px;
+}
+.background {
+  background-image: linear-gradient(#212121, #101010);
+  min-width: 100vw;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.button {
+  margin: 20px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 4rem;
+  margin: 10px;
+}
+
+.song-list-container {
+  background-color: #6a0dad; /* Purple background */
+  color: white;
+  padding: 20px;
+  padding-left: 50px;
+  border-radius: 10px;
+  max-width: 60vw; /* Set max width */
+  margin: auto; /* Center the container */
+}
+
+.song-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.song-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.song-rank {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.next-step {
+  background-color: #9b59b6; /* Lighter purple */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.song-title {
+  margin-right: 5px;
+  color: inherit; /* The link will use the color inherited from the parent element */
+  text-decoration: none; /* Removes the underline from links */
+}
+
+.song-title:hover {
+  text-decoration: none; /* Ensures the underline does not appear on hover */
+}
