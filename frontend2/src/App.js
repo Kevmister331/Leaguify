@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react"
 import items from "./assets/champions.json" // Adjust the import path as needed
 import "./App.css"
 import logo from './assets/leaguifylogo.png';
+import loadingGif from './assets/teemo-league-of-legends.gif'; // Adjust the path as necessary
+
 
 const BACKEND_URL = "http://127.0.0.1:5000"
 
@@ -9,37 +11,7 @@ const App = () => {
   const [loading, setLoading] = useState(false)
   const [selectedItem, setSelectedItem] = useState("Aatrox")
   const [selectedType, setSelectedType] = useState("Songs")
-  const [songs, setSongs] = useState(
-    [
-      // { should also have an artistUrl field!
-      //   title: "Die For You",
-      //   artist: "Joji",
-      //   url: "https://open.spotify.com/track/your-spotify-track-id",
-      // },
-      // {
-      //   title: "1AM FREESTYLE",
-      //   artist: "Joji",
-      //   url: "https://open.spotify.com/track/your-spotify-track-id",
-      // },
-      // {
-      //   title: "YEAH RIGHT",
-      //   artist: "Joji",
-      //   url: "https://open.spotify.com/track/your-spotify-track-id",
-      // },
-      // {
-      //   title: "SLOW DANCING IN THE DARK",
-      //   artist: "Joji",
-      //   url: "https://open.spotify.com/track/your-spotify-track-id",
-      // },
-      // {
-      //   title: "kill u",
-      //   artist: "Cavetown",
-      //   url: "https://open.spotify.com/track/your-spotify-track-id",
-      // },
-      // Make sure to replace the URLs with the actual Spotify song URLs
-    ]
-    // ... other songs
-  )
+  const [songs, setSongs] = useState([])
 
   useEffect(() => {
     console.log(songs)
@@ -161,7 +133,9 @@ const App = () => {
         <button className="button" onClick={submitOptions} disabled={loading}>
           Generate
         </button>
-        <p>{selectedType}</p>
+        {loading && <img src={loadingGif} alt="Loading..." />}
+        {loading && <p >Generating...</p>}
+        
       </div>
 
       <div className="song-list-container">

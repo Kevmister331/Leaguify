@@ -126,3 +126,9 @@ select {
   outline: none;
   margin-top: 10px; /* Space between title and dropdown */
 }
+
+.teemo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
