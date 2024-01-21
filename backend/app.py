@@ -1,5 +1,5 @@
 from flask import Flask, make_response, request
-from backend.openai_api import get_recommendations
+from openai_api import get_recommendations
 from spotify_client import get_spotify_client
 from spotify_service import SpotifyService
 from api_request_handler import APIRequestHandler
@@ -26,12 +26,11 @@ api_request_handler = APIRequestHandler(spotify_service)
 def ping():
     return "server up"
 
-@app.route('/getsongs', methods=['POST'])
-def getSongs():
-    body = request.json
-    champion = body["champion"]
+@app.route('/getsongs/<champion>', methods=['GET'])
+def getSongs(champion):
+    print("In getSongs: " + champion)
     result = generate('songs', champion)
-    return jsonify(result)
+    return {'songs': result}
 
 
 @app.route('/getplaylists/<champion>')
@@ -60,7 +59,7 @@ def generate(typeContent, champion):
         champions = json.load(read_file)
     
     traits = champions[champion]
-    recommendations = []
+    # recommendations = []
     parsedRecs = ast.literal_eval(get_recommendations(traits))
     # for rec in parsedRecs:
     #     recommendation = json.loads(rec)

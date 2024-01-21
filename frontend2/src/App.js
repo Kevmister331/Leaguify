@@ -1,43 +1,47 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import items from "./assets/champions.json" // Adjust the import path as needed
 import "./App.css"
 
-const BACKEND_URL = "http://localhost:5000"
+const BACKEND_URL = "http://127.0.0.1:5000"
 
 const App = () => {
   const [selectedItem, setSelectedItem] = useState("")
   const [selectedType, setSelectedType] = useState("")
   const [songs, setSongs] = useState(
     [
-      {
-        title: "Die For You",
-        artist: "Joji",
-        url: "https://open.spotify.com/track/your-spotify-track-id",
-      },
-      {
-        title: "1AM FREESTYLE",
-        artist: "Joji",
-        url: "https://open.spotify.com/track/your-spotify-track-id",
-      },
-      {
-        title: "YEAH RIGHT",
-        artist: "Joji",
-        url: "https://open.spotify.com/track/your-spotify-track-id",
-      },
-      {
-        title: "SLOW DANCING IN THE DARK",
-        artist: "Joji",
-        url: "https://open.spotify.com/track/your-spotify-track-id",
-      },
-      {
-        title: "kill u",
-        artist: "Cavetown",
-        url: "https://open.spotify.com/track/your-spotify-track-id",
-      },
+      // {
+      //   title: "Die For You",
+      //   artist: "Joji",
+      //   url: "https://open.spotify.com/track/your-spotify-track-id",
+      // },
+      // {
+      //   title: "1AM FREESTYLE",
+      //   artist: "Joji",
+      //   url: "https://open.spotify.com/track/your-spotify-track-id",
+      // },
+      // {
+      //   title: "YEAH RIGHT",
+      //   artist: "Joji",
+      //   url: "https://open.spotify.com/track/your-spotify-track-id",
+      // },
+      // {
+      //   title: "SLOW DANCING IN THE DARK",
+      //   artist: "Joji",
+      //   url: "https://open.spotify.com/track/your-spotify-track-id",
+      // },
+      // {
+      //   title: "kill u",
+      //   artist: "Cavetown",
+      //   url: "https://open.spotify.com/track/your-spotify-track-id",
+      // },
       // Make sure to replace the URLs with the actual Spotify song URLs
     ]
     // ... other songs
   )
+
+  useEffect(() => {
+    console.log(songs)
+  }, [songs])
 
   const submitOptions = () => {
     if (selectedItem === "" || selectedType === "") {
@@ -45,36 +49,56 @@ const App = () => {
     }
     console.log("Submitting options:", selectedItem, selectedType)
 
-    const URL = BACKEND_URL// + "/" + "headers"
+    const URL = BACKEND_URL + `/getsongs/${selectedItem}`
+    // + "/" + "headers"
     console.log(URL)
-    fetch(URL, {
-      method: "GET",
-    })
-      .then((result) => {
-        console.log(result + "success")
-        return
-      })
-      .catch((err) => {
-        console.log(err)
-      })
+    // fetch(URL, {
+    //   method: "GET",
+    // })
+    //   .then((result) => {
+    //     console.log(result + "success")
+    //     return
+    //   })
+    //   .catch((err) => {
+    //     console.log(err)
+    //   })
+    // ,
+    //   body: JSON.stringify({
+    //     champion: selectedItem
+    //   })
 
     // Make your API call here
-    fetch(URL + '/getsongs', {
-      method: 'POST',
+    fetch(URL, {
+      method: 'GET',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        champion: selectedItem
-      })
+      }
     }).then((result) => {
-        console.log("Success! Here's the data: " + result)
-        return
+        console.log("Success! Here's the data: ")
+        console.log(result[songs])
+
+        setSongArray(result[songs])
+        // return
       })
       .catch((err) => {
         console.log(err)
       })
+  }
+
+  const setSongArray = (songs) => {
+    let correctlyFormattedSongs = []
+    for (let song in songs) {
+      let correctlyFormattedSong = {title: "", artist: "", url: ""}
+      // song name
+      correctlyFormattedSong["title"] = song['searchResult']['tracks']['items'][0]['name']
+      // artist name
+      correctlyFormattedSong["artist"] = song['searchResult']['tracks']['items'][0]['artists'][0]['name']
+      // song url
+      correctlyFormattedSong["url"] = song['searchResult']['tracks']['items'][0]['external_urls']['spotify']
+      correctlyFormattedSongs.push(correctlyFormattedSong)
+    }
+    setSongs(correctlyFormattedSongs)
   }
 
   const handleDropdownChange = (event) => {
