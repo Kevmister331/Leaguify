@@ -1,6 +1,8 @@
+from openai_api import get_recommendations
 from spotify_service import SpotifyService
 import json
 from spotify_client import get_spotify_client
+import ast
 
 pairs = [
     {
@@ -47,3 +49,29 @@ for song in res['songs']:
 
     # Album ID
     print("Album ID: " + song['searchResult']['tracks']['items'][0]['album']['id'])
+
+champions: json
+with open("league_champs.json", "r") as read_file:
+    champions = json.load(read_file)
+
+traits = champions["Aatrox"]
+
+recommendations = []
+parsedRecs = ast.literal_eval(get_recommendations(traits))
+# for rec in parsedRecs:
+#     recommendation = json.loads(rec)
+#     if not isinstance(recommendation, dict):
+#         print(rec)
+#         raise Exception("Exception encountered: ChatGPT didn't return a JSON, for some reason")
+#     recommendations.append(recommendation)
+
+res2 = service.retrieve_song_data(song_artist_pairs=parsedRecs)
+for song in res2['songs']:
+    # Song name
+    print("Song Name: " + song['searchResult']['tracks']['items'][0]['name'])
+
+    # song url
+    print("Song URL: " + song['searchResult']['tracks']['items'][0]['external_urls']['spotify'])
+
+    # Song ID
+    print("Song ID: " + song['searchResult']['tracks']['items'][0]['id'])
