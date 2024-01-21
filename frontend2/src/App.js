@@ -59,6 +59,22 @@ const App = () => {
       })
 
     // Make your API call here
+    fetch(URL + '/getsongs', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        champion: selectedItem
+      })
+    }).then((result) => {
+        console.log("Success! Here's the data: " + result)
+        return
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }
 
   const handleDropdownChange = (event) => {

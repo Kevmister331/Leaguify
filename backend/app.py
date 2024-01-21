@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, make_response, request
 from backend.openai_api import get_recommendations
 from spotify_client import get_spotify_client
 from spotify_service import SpotifyService
@@ -10,26 +10,28 @@ import ast
 
 app = Flask(__name__)
 CORS(app, supports_credentials=True, origins='*')
-CORS(app)
+# CORS(app)
 spotify_client = get_spotify_client()
 spotify_service = SpotifyService(spotify_client)
 api_request_handler = APIRequestHandler(spotify_service)
 
-@app.route('/headers')
-def headers():
-    response = make_response("Header data")
-    response.headers['Access-Control-Allow-Origin'] = '*'
-    return response
+# @app.route('/headers')
+# def headers():
+#     response = make_response("Header data")
+#     response.headers['Access-Control-Allow-Origin'] = '*'
+#     return response
 
 # Define your Flask routes here
 @app.route('/', methods=['GET'])
 def ping():
     return "server up"
 
-@app.route('/getsongs/<champion>')
-def getSongs(champion):
-    data = generate('songs', champion) 
-    return jsonify(data)
+@app.route('/getsongs', methods=['POST'])
+def getSongs():
+    body = request.json
+    champion = body["champion"]
+    result = generate('songs', champion)
+    return jsonify(result)
 
 
 @app.route('/getplaylists/<champion>')
