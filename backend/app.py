@@ -14,6 +14,29 @@ api_request_handler = APIRequestHandler(spotify_service)
 def ping():
     return "server up"
 
+@app.route('/getsong/<champion>')
+def getSong(champion):
+    data = generate('song', champion) 
+    return jsonify(data)
+
+
+@app.route('/getplaylist/<champion>')
+def getPlaylist(champion):
+    data = generate('playlist', champion)
+    return jsonify(data)
+
+@app.route('/getartist/<champion>')
+def getArtist(champion):
+    data = generate('artist', champion)
+    return jsonify(data)
+
+
+def generate(champion, typeContent):
+    #return api_request_handler.handle_request
+    return (champion + " " + typeContent)
+
+
+
 @app.route('/api/search', methods=['POST'])
 def search():
     data = request.json
