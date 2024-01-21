@@ -3,3 +3,4 @@ spotipy
 jsonify
 python-dotenv
 config
+flask_cors
