@@ -10,7 +10,7 @@ const App = () => {
   const [selectedType, setSelectedType] = useState("Songs")
   const [songs, setSongs] = useState(
     [
-      // {
+      // { should also have an artistUrl field!
       //   title: "Die For You",
       //   artist: "Joji",
       //   url: "https://open.spotify.com/track/your-spotify-track-id",
@@ -89,7 +89,8 @@ const App = () => {
   const setSongArray = (songs) => {
     let correctlyFormattedSongs = []
     songs.map((song) => {
-      let correctlyFormattedSong = {title: "", artist: "", url: ""}
+      let correctlyFormattedSong = {title: "", artist: "", url: "", artistUrl: ""}
+      // song title
       correctlyFormattedSong["title"] = song['song']
       console.log(song)
       console.log(song.song)
@@ -99,6 +100,8 @@ const App = () => {
       correctlyFormattedSong["artist"] = song['artist']
       // song url
       correctlyFormattedSong["url"] = song['searchResult']['tracks']['items'][0]['external_urls']['spotify']
+      // artist url
+      correctlyFormattedSong["artistUrl"] = song['searchResult']['tracks']['items'][0]['artists'][0]['external_urls']['spotify']
       correctlyFormattedSongs.push(correctlyFormattedSong)
     })
     // for (let song in songs) {
@@ -159,7 +162,7 @@ const App = () => {
 
       <div className="song-list-container">
         <h1>Result</h1>
-        <p>Get your top 5 tracks</p>
+        <p>Get the top tracks related to your champion!</p>
         <ul className="song-list">
           {songs.map((song, index) => (
             <li key={index} className="song-item">
@@ -167,7 +170,9 @@ const App = () => {
               <a href={song.url} className="song-title" target="_blank" rel="noreferrer">
                 {song.title}
               </a>
-              <span className="song-artist">{song.artist}</span>
+              <a href={song.artistUrl} className="song-artist" target="_blank" rel="noreferrer">
+                {song.artist}
+              </a>
             </li>
           ))}
         </ul>
