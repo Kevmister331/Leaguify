@@ -5,8 +5,8 @@ import "./App.css"
 const BACKEND_URL = "http://127.0.0.1:5000"
 
 const App = () => {
-  const [selectedItem, setSelectedItem] = useState("")
-  const [selectedType, setSelectedType] = useState("")
+  const [selectedItem, setSelectedItem] = useState("Aatrox")
+  const [selectedType, setSelectedType] = useState("Songs")
   const [songs, setSongs] = useState(
     [
       // {
@@ -74,12 +74,11 @@ const App = () => {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       }
-    }).then((result) => {
-        console.log("Success! Here's the data: ")
-        console.log(result[songs])
-
-        setSongArray(result[songs])
-        // return
+    }).then(response => response.json()) // This returns a Promise
+      .then(data => {
+        const result = data.songs; // Access the songs array
+        console.log(result);       // Do something with the songs array
+        setSongArray(result)
       })
       .catch((err) => {
         console.log(err)
@@ -88,16 +87,33 @@ const App = () => {
 
   const setSongArray = (songs) => {
     let correctlyFormattedSongs = []
-    for (let song in songs) {
+    songs.map((song) => {
       let correctlyFormattedSong = {title: "", artist: "", url: ""}
-      // song name
-      correctlyFormattedSong["title"] = song['searchResult']['tracks']['items'][0]['name']
+      correctlyFormattedSong["title"] = song['song']
+      console.log(song)
+      console.log(song.song)
+      console.log(song['song'])
+      console.log(song['artist'])
       // artist name
-      correctlyFormattedSong["artist"] = song['searchResult']['tracks']['items'][0]['artists'][0]['name']
+      correctlyFormattedSong["artist"] = song['artist']
       // song url
       correctlyFormattedSong["url"] = song['searchResult']['tracks']['items'][0]['external_urls']['spotify']
       correctlyFormattedSongs.push(correctlyFormattedSong)
-    }
+    })
+    // for (let song in songs) {
+    //   let correctlyFormattedSong = {title: "", artist: "", url: ""}
+    //   // song name
+    //   correctlyFormattedSong["title"] = song['song']
+    //   console.log(song)
+    //   console.log(song.song)
+    //   console.log(song['song'])
+    //   console.log(song['artist'])
+    //   // artist name
+    //   correctlyFormattedSong["artist"] = song['artist']
+    //   // song url
+    //   correctlyFormattedSong["url"] = song['searchResult']['tracks']['items'][0]['external_urls']['spotify']
+    //   correctlyFormattedSongs.push(correctlyFormattedSong)
+    // }
     setSongs(correctlyFormattedSongs)
   }
 
