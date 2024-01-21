@@ -22,6 +22,7 @@ h2 {
   top: 0;
   left: 0;
   width: 100%;
+  min-height: 100vh;
   background: var(--spotify-black);
   color: var(--spotify-white);
   overflow-x: hidden;
@@ -46,6 +47,12 @@ h2 {
 .button:hover, .next-step:hover {
   background-color: #1ed760; /* Slightly lighter green on hover */
   color: var(--spotify-black); /* Change text color to ensure visibility */
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  background-color: #888888;
+  color: var(--spotify-white);
 }
 
 .container {

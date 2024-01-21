@@ -6,6 +6,7 @@ import logo from './assets/leaguifylogo.png';
 const BACKEND_URL = "http://127.0.0.1:5000"
 
 const App = () => {
+  const [loading, setLoading] = useState(false)
   const [selectedItem, setSelectedItem] = useState("Aatrox")
   const [selectedType, setSelectedType] = useState("Songs")
   const [songs, setSongs] = useState(
@@ -48,6 +49,7 @@ const App = () => {
     if (selectedItem === "" || selectedType === "") {
       console.log("error submitting options, some still null")
     }
+    setLoading(true)
     console.log("Submitting options:", selectedItem, selectedType)
 
     const URL = BACKEND_URL + `/getsongs/${selectedItem}`
@@ -80,9 +82,11 @@ const App = () => {
         const result = data.songs; // Access the songs array
         console.log(result);       // Do something with the songs array
         setSongArray(result)
+        setLoading(false)
       })
       .catch((err) => {
         console.log(err)
+        setLoading(false)
       })
   }
 
@@ -151,7 +155,7 @@ const App = () => {
             </select>
           </div>
         </div>
-        <button className="button" onClick={submitOptions}>
+        <button className="button" onClick={submitOptions} disabled={loading}>
           Generate
         </button>
         <p>{selectedType}</p>
